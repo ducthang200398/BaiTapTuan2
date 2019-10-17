@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage Title="Cascading Style Sheet" xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             xmlns:local="clr-namespace:ApplyStyle"
+             x:Class="CSS.MainPage">
+
+    <ContentPage.Resources>
+        <StyleSheet Source="Styles/Styles.css" />
+        <ResourceDictionary MergedWith="local:StyleExamples"/>
+    </ContentPage.Resources>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+        <Entry Placeholder="Enter Subject" x:Name="Subject" Grid.Row="0" Focused="HandleSubject" Unfocused="HandleSubject" />
+        <StackLayout StyleClass="FeedbackBorder" Grid.Row="1"   Orientation="Vertical">
+            <Editor x:Name="Feedback" Focused="HandleFeedback" Unfocused="HandleFeedback" VerticalOptions="FillAndExpand" />
+            
+        </StackLayout>
+        <StackLayout Orientation="Vertical" Grid.Row="2">
+            <Button Text="Submit" StyleClass="SubmitButton" />
+            <Button Text="Cancel" StyleClass="CancelButton" />
+        </StackLayout>
+    </Grid>
+</ContentPage>
+
+
+
